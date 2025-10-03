@@ -1,18 +1,21 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { sequelize } = require("./models");
-require('dotenv').config();
+
+const authRoutes = require("./routes/authRoutes");
 const studentRoutes = require("./routes/studentRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const examRoutes = require("./routes/examRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 
+require('dotenv').config();
 const app = express();
 
 // Middlewares
 app.use(bodyParser.json());
 
 // Routes
+app.use("/api/auth", authRoutes)
 app.use("/api/students", studentRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/exams", examRoutes);

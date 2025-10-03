@@ -31,7 +31,8 @@ exports.getAllExams = async (req, res) => {
 exports.addResult = async (req, res) => {
   try {
     const { examId } = req.params;
-    const { studentId, marks, status } = req.body; // status = pass/fail
+    console.log('examId :>> ', examId);
+    const { studentId, marks, status ,enrollmentId} = req.body; // status = pass/fail
 
     const exam = await Exam.findByPk(examId);
     if (!exam) return res.status(404).json({ error: "Exam not found" });
@@ -44,6 +45,7 @@ exports.addResult = async (req, res) => {
       studentId,
       marks,
       status,
+      enrollmentId,
       locked: true // results locked until fee payment
     });
 
