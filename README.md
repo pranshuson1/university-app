@@ -26,3 +26,60 @@ It supports **students, faculty, courses, exams, fee payments, authentication & 
 ---
 
 ## 📂 Project Structure
+university-erp/
+│── controllers/ # All controllers
+│ ├── authController.js
+│ ├── studentController.js
+│ ├── courseController.js
+│ ├── examController.js
+│ ├── paymentController.js
+│
+│── routes/ # API routes
+│ ├── authRoutes.js
+│ ├── studentRoutes.js
+│ ├── courseRoutes.js
+│ ├── examRoutes.js
+│ ├── paymentRoutes.js
+│
+│── models/ # Sequelize models
+│ ├── index.js
+│ ├── User.js
+│ ├── Student.js
+│ ├── Faculty.js
+│ ├── Course.js
+│ ├── Enrollment.js
+│ ├── Exam.js
+│ ├── Result.js
+│ ├── FeePayment.js
+│
+│── middleware/
+│ ├── authMiddleware.js
+│
+│── app.js # Main entry
+│── package.json
+│── .env
+│── README.md
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone & Install
+```bash
+git clone https://github.com/yourusername/university-erp.git
+cd university-erp
+npm install
+```
+### 2️⃣ Setup Environment Variables
+```
+PORT =4000
+DB_URL= mysql:root:password@localhost:3306/university
+```
+### 3️⃣ Run MySQL
+```sql
+Create database: CREATE DATABASE university_erp;
+```
+### 4️⃣ Start Server
+```bash
+npm start
+```
+### IMPORT POSTMAN COLLECTION
+##### University ERP API.postman_collection.json
